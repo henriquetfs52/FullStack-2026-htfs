@@ -1,1 +1,0 @@
-# FullStack-2026-htfs
