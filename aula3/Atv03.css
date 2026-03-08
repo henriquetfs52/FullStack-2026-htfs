@@ -32,6 +32,9 @@ h1{ text-align: center;}
     background-color: rgb(65, 179, 231);
     display: flex;
     align-items: center;
+    text-align: center;
+    gap: 100px;
+    justify-content: center;
 }
 
 #text {
@@ -39,16 +42,19 @@ h1{ text-align: center;}
     flex: 1;
 }
 
+
+
 #text2 {
-    flex: 1;
     text-align: center;
-    word-spacing: 150px;
     color: brown;
     font-size: 20px;
     font-weight: bold;
     
 }
 
+#text2:hover{
+    color: red;
+}
 #img2 {
     width: 200px;
     height: 200px;
@@ -132,11 +138,13 @@ li {
     height: 200px;
     display: flex;
     justify-content: space-between;
+    background-color: bisque;
+    text-align: center;
+    
 }
 
 .img4 {
-    height: 180px;
-    width: 180px;
+    margin: 10px;
 }
 
 .img4 img{
@@ -145,5 +153,6 @@ li {
 }
 
 #textfinal {
-    font-family: ;
+    font-size: 15pt;
+    margin: auto;
 }
