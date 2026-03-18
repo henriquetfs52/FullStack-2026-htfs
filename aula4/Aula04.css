@@ -1,0 +1,19 @@
+.flex{
+    display: flex;
+
+    background-color: aqua;
+    justify-content: fl;
+    height: 200px;
+    align-items: center;
+    align-content: space-around;
+}
+.flex div{
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+#x {
+    flex-grow: 3;
+
+}
