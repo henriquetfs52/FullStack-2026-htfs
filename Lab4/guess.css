@@ -1,0 +1,17 @@
+body {
+    background-color: bisque;
+}
+
+#all {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    margin: auto;
+}
+
