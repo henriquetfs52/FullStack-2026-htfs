@@ -1,17 +1,47 @@
 body {
-    background-color: bisque;
+    background-color:cornflowerblue;
 }
 
 #all {
     width: 100%;
-    height: 500px;
+    height: 300px;
     display: flex;
+    flex-flow: column ;
+    align-items: center;
     justify-content: center;
+}
+
+#all img {
+    width: 130px;
+    height: 100px;
 }
 
 h1{
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
-    margin: auto;
 }
 
+button:hover{
+    background-color: aqua;
+}
+
+#respX {
+    height: 100px;
+    display: flex;
+    width: 50%;
+    border-style: solid;
+    border-color: brown;
+    background-color: darksalmon;
+    justify-self: center;
+    justify-content: space-around;
+}
+
+#maiores {
+    text-align: center;
+    color: brown;
+}
+
+#menores {
+    text-align: center;
+    color: brown;
+}
