@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(116, 112, 181);
+}
+
+#title {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  position: relative;
+  background-color:rgb(7, 7, 172);
+}
+
+#title h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 100px;
+  font-family:'Times New Roman', Times, serif;
+  color: white;
+  text-decoration: wavy;
+}
+
+#title canvas {
+  position: absolute;
+}
+
+#centro {
+  height: 800px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border: 1px solid black;
+  background-color:rgb(80, 80, 237);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+#centro h2 {
+    color: white;
+}
+
+#imgs1 {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    width: 80%;
+    border-radius: 12px;
+    border-style: solid;
+    border-color:rgb(116, 112, 181);
+    border-width: 1px;
+    padding: 50px,50px;
+    background-color: rgb(116, 112, 181) ;
+    padding: 2%;
+} 
+
+#imgs1 img:hover {
+    height: 110%;
+    width: ;
+} 
+
+#projetos a {
+    font-size: 25px;
+    color: azure;
+    font-family:'Courier New', Courier, monospace;
+}
+
+#projetos  {
+ color:azure}
+
+
+
