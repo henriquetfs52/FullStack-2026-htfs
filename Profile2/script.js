@@ -20,5 +20,5 @@ function animar() {
     desenha_luma();
     requestAnimationFrame(animar);
 }
-desenha_luma()
+
 animar()

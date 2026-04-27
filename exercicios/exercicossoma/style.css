@@ -1,0 +1,35 @@
+#main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: antiquewhite;
+    border-style: solid;
+    border-color: black;
+}
+
+#main h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+    margin: 10px;    
+}
+
+#main h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px; 
+    margin: 10px;    
+}
+
+#main p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;   
+    margin: 10px;  
+}
+
+
+#bloco1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
