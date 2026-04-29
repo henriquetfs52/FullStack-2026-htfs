@@ -1,0 +1,72 @@
+body {
+    background-image: url('SunsetBGlowk.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+#titulo {
+    background-color: rgb(235, 177, 90);
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    height: 150px;
+    width: 90%;
+    position: relative;
+    
+}
+#titulo img{
+    order:2
+}
+#titulo canvas{
+     position: absolute;
+     order: 1;
+}
+
+#main{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-flow: column;
+    width: 90%;
+    background-color: rgb(255, 255, 255,0.7);
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#main p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align:center;
+    text-shadow: 0px 1px 0px #c01919;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-weight: bold;
+}
+
+#main h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    text-align:center;
+    text-shadow: 0px 2px 0px #000000;
+    color: rgb(212, 31, 55);
+    
+}
+
+#options{
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+    flex-flow: row;
+    
+    
+}
+#options h1:hover{
+    color: blue;
+    transform: scale(1.1)
+}
