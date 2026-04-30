@@ -2,7 +2,7 @@ let canvas = document.getElementById("Ctitulo")
 let ctx = canvas.getContext("2d");
 
 let img = new Image()
-    img.src = "Bullet-removebg-preview.png"
+    img.src = "Sprites/Bullet-removebg-preview.png"
 x = -150
 vel = 6
 
