@@ -14,7 +14,7 @@ app.set('views', './views');
 var server = http.createServer(app);
 server.listen(80)
 
-console.log("Servidor rodando 67".rainbow)
+console.log("Servidor rodando".rainbow)
 
 app.get("/", function(req, res){
     res.redirect("Aula")
