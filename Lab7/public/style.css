@@ -1,0 +1,32 @@
+body {
+    background-color: antiquewhite;
+}
+
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 200px;
+    width: 100%;
+    background-color: aliceblue;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    font-size: 30px;
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    height: 500px;
+    width: 500px;
+    background-color: beige;
+    justify-self: center;
+    margin: 30px;
+}
+
+#title h1{
+    align-self: center;
+}
