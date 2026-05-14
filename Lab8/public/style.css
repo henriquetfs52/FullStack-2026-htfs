@@ -1,0 +1,38 @@
+#pagina_create{
+    background-color: bisque;
+}
+
+#cadastrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-flow: column;
+    height: 400px;
+    width: 600px;
+    border-style: solid;
+    background-color: antiquewhite;
+    justify-self: center;
+}
+
+#cadastro{
+    font-weight: bold;
+    text-align: center;
+    color: green;
+    font-size: 50px;
+
+
+}
+
+.postagens{
+    padding: 50px;
+    margin: 50px;
+    background-color: azure;
+    border-radius: 15;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}

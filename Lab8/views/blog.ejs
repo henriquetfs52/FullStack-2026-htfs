@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body id="pagina-blog">
+    
+    <a href="/cadastrar_post.html">
+    <button>Criar post</button>
+    </a>
+
+    <h1> Posts </h1>
+
+    <% posts.forEach(function(post){%>
+        <div class="postagens">
+
+            <h2><%= post.titulo %></h2>
+
+            <h2><%= post.resumo %></h2>
+
+            <h2><%= post.conteudo %></h2>
+
+
+        </div>
+
+
+    <% }) %>
+
+
+</body>
+</html>
