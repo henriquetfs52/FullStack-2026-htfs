@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link href="style.css" rel="stylesheet">
 </head>
-<body id="pagina-blog">
+<body id="pagina_blog">
     
+    <div id="titulo">
+    <h1> Posts </h1>
     <a href="/cadastrar_post.html">
     <button>Criar post</button>
     </a>
-
-    <h1> Posts </h1>
-
+    </div>
+   
+    <div id="post_box">
     <% posts.forEach(function(post){%>
         <div class="postagens">
 
-            <h2><%= post.titulo %></h2>
+            <h2>Titulo: <%= post.titulo %></h2>
 
-            <h2><%= post.resumo %></h2>
+            <h2>Resumo: <%= post.resumo %></h2>
 
-            <h2><%= post.conteudo %></h2>
+            <h2>Conteúdo: <%= post.conteudo %></h2>
 
 
         </div>
 
 
     <% }) %>
-
+    </div>
 
 </body>
 </html>

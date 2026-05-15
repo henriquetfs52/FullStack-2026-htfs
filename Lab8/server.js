@@ -27,7 +27,7 @@ const uri = 'mongodb://localhost:27017/';
 const client = new MongoClient(uri, { useNewUrlParser: true })
 
 var dbo = client.db("lab_8");
-var usuarios = dbo.collection("posts");
+var posts = dbo.collection("posts");
 client.connect()
 
 
@@ -39,24 +39,25 @@ app.post("/cadastrar_postagem", function(req, res){
        conteudo: req.body.conteudo
     };
 
-    usuarios.insertOne(data, function(err) {
+    posts.insertOne(data, function(err) {
 
         console.log(err)
 
         if (err) {
 
-            console.log(err)
+            res.send("Erro ao cadastrar post!")
 
         } else {
 
-            res.render('blog')
+            console.log(data)
+            res.render('resp_cadastro', { resposta: "Post cadastrado com sucesso!"})
+            
         }
     })
 })
-
 app.get("/blog", function(req, res){
 
-    usuarios.find().toArray(function(err, items){
+    posts.find().toArray(function(err, items){
 
         if(err){
 

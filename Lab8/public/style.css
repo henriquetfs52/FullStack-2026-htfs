@@ -25,14 +25,39 @@
 }
 
 .postagens{
-    padding: 50px;
-    margin: 50px;
-    background-color: azure;
-    border-radius: 15;
+
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
     border-style: solid;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
+    width: 680px;
+    font-size: 10px;
+}
+
+#pagina_blog{
+    background-color: bisque;
+}
+
+#post_box{
+    background-color:rgb(235, 235, 229);
+    padding: 10px;
+    width: 750px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    border-radius: 15px;
+
+}
+
+#titulo{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#resposta{
+    text-align: center;
 }
