@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App_VendeMais</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+     <div id="titulo">
+        <h1>VendeMais Automóveis</h1>
+    </div>
+
+    <a href="/cadastro_carro.html" id="c_carro"><button>Cadastrar Carro</button></a>
+    <a href="/atualizar_carro" id="c_carro"><button>Atualizar Carro</button></a>
+    <a href="/vender_carro" id="c_carro"><button>Vender Carro</button></a>
+    <a href="/remover_carro" id="c_carro">
+    <button>Remover Carro</button>
+</a>
+
+    <div id="carros_box">
+    <% carros.forEach(function(post){ %>
+        <div class="carro">
+
+            <h2>Marca: <%= post.marca %></h2>
+
+            <h2>Modelo: <%= post.modelo %></h2>
+
+            <h2>Ano: <%= post.ano %></h2>
+
+            <h2>Quantidade: <%= post.quantidade %></h2>
+
+        </div>
+
+    <% }) %>
+</div>
+    
+</body>
+</html>
