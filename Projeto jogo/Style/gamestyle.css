@@ -1,15 +1,63 @@
-body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0px;
+body{
+    margin: 0;
+    height: 100vh;
+
+    
+    position: relative;
+}
+
+.fundo{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("../Sprites/game_bg_lowk.png");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(5px);
+     transform: scale(1.1);
+    z-index: -1;
+
+
 }
 
 #gamescreen{
-    background-image: url("../Sprites/88_PC\ _\ Computer\ -\ Stardew\ Valley\ -\ Minigames\ -\ Journey\ of\ the\ Prairie\ King.png");
-    border-style: solid;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    background-image: url(../Sprites/sand);
+    background-size: 64px 64px;
+    transform: translate(-50%, -50%);
+    background-repeat: repeat;
     border-color: brown;
-    
+    border-style: solid;
+    margin: 0;
+}
+
+
+
+#controles{
+    position: absolute;
+
+    left: 100%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    margin-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 20px;
+}
+
+
+#controles img{
+    width: 120px;
+
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));
 }
