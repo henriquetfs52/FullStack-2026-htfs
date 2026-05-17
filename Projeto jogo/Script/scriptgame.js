@@ -20,9 +20,13 @@ let rect = {
     y: 220,
     w: 50,
     h: 50,
-    color: "red"
+    vida: 3
 };
 
+ // Imagem do jogador
+let playerImg = new Image();
+
+playerImg.src = "../Sprites/Player_W.png";
 
 // Tiro
 
@@ -33,7 +37,7 @@ let shoot = {
     h: 10,
     dx: 0,
     dy: 0,
-    color: "blue"
+    color: "brown"
 };
 
 
@@ -114,6 +118,7 @@ document.addEventListener("keydown", function(event){
 });
 
 
+
 // Sistema de tiro
 
 document.addEventListener("keydown", function(tiro){
@@ -173,18 +178,46 @@ document.addEventListener("keydown", function(tiro){
 
 // Movimento do jogador
 
+// Movimento do jogador
+
 document.addEventListener("keydown", function(andar){
 
     let tecla = andar.key;
-    let vel = 12;
+    let vel = 15;
 
-    if(tecla == "w"){ rect.y -= vel; }
-    if(tecla == "s"){ rect.y += vel; }
-    if(tecla == "a"){ rect.x -= vel; }
-    if(tecla == "d"){ rect.x += vel; }
+    // W
+    if(tecla == "w"){
+
+        rect.y -= vel;
+
+        playerImg.src = "../Sprites/Player_W.png";
+    }
+
+    // S
+    if(tecla == "s"){
+
+        rect.y += vel;
+
+        playerImg.src = "../Sprites/Player_S.png";
+    }
+
+    // A
+    if(tecla == "a"){
+
+        rect.x -= vel;
+
+        playerImg.src = "../Sprites/Player_A.png";
+    }
+
+    // D
+    if(tecla == "d"){
+
+        rect.x += vel;
+
+        playerImg.src = "../Sprites/Player_D.png";
+    }
 
 });
-
 
 // Mudança de fase
 
@@ -216,6 +249,48 @@ function mudarFase(novaFase){
         desenha();
 
     },1000);
+
+}
+
+function resetarInimigos(){
+
+    for(let inimigo of inimigos){
+
+        let lado = Math.floor(Math.random() * 4);
+
+        // Direita
+        if(lado == 0){
+
+            inimigo.x = canvasgame.width + 50;
+            inimigo.y = Math.random() * canvasgame.height;
+
+        }
+
+        // Cima
+        if(lado == 1){
+
+            inimigo.y = -50;
+            inimigo.x = Math.random() * canvasgame.width;
+
+        }
+
+        // Esquerda
+        if(lado == 2){
+
+            inimigo.x = -50;
+            inimigo.y = Math.random() * canvasgame.height;
+
+        }
+
+        // Baixo
+        if(lado == 3){
+
+            inimigo.y = canvasgame.height + 50;
+            inimigo.x = Math.random() * canvasgame.width;
+
+        }
+
+    }
 
 }
 
@@ -277,8 +352,12 @@ function desenha(){
 
     // Desenha jogador
 
-    ctx.fillStyle = rect.color;
-    ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
+    ctx.drawImage(
+    playerImg,
+    rect.x,
+    rect.y,
+    rect.w,
+    rect.h);
 
 
     // Desenha tiro
@@ -317,7 +396,7 @@ function desenha(){
             shoot.x + shoot.w > inimigo.x &&
             shoot.y < inimigo.y + inimigo.h &&
             shoot.y + shoot.h > inimigo.y
-        ){
+        ) {
 
             points += 1;
             atirar = false;
@@ -370,9 +449,14 @@ function desenha(){
         ){
 
             points = 0;
+            
+            rect.vida-=1
+
+            resetarInimigos()
 
             rect.x = 300;
             rect.y = 220;
+
         }
 
 
@@ -383,6 +467,23 @@ function desenha(){
 
     }
 
+     // Reseta quando visa <0
+    
+     if(rect.vida <= 0){
+
+        rect.vida = 3;
+
+        fase = 1;
+        points = 0;
+
+        inimigos = [];
+
+        criarInimigo(1.5);
+
+        rect.x = 300;
+        rect.y = 220;
+    }
+
 
     // HUD
 
@@ -391,6 +492,7 @@ function desenha(){
 
     ctx.fillText("Pontos: " + points, 500, 30);
     ctx.fillText("Level: " + fase, 20, 30);
+    ctx.fillText("Vidas: " + rect.vida, 200, 30);
 
 
     // Tela de pause
@@ -412,4 +514,4 @@ function desenha(){
 
 // Inicia o jogo
 
-desenha();
+desenha()
