@@ -1,32 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <meta charset="UTF-8">
-    
+
     <title>HighNoonGame</title>
+
     <link href="../Style/gamestyle.css" rel="stylesheet">
+
 </head>
 
 <body>
+
+    <!-- Fundo borrado -->
     <div class="fundo"></div>
+
+
+    <!-- Área do jogo -->
     <div id="gamescreen">
 
-        <canvas id="game" width="640" height="480"></canvas>
-        <canvas id="canvas2" width="400" height="200" style="display:none;"></canvas>
 
+        <!-- Tela inicial -->
+        <div id="telaInicial">
+
+            <!-- Fundo da tela inicial -->
+            <img id="fundoMenu" src="../Sprites/menu_bg.jpg">
+
+
+            <!-- Conteúdo -->
+            <div id="menuConteudo">
+
+                <!-- Título -->
+                <img id="tituloJogo" src="../Sprites/HighNoon.png">
+
+
+                <!-- Botão -->
+                <button id="btnIniciar">
+                    INICIAR
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Canvas -->
+        <canvas id="game" width="640" height="480"></canvas>
+
+
+        <!-- Controles -->
         <div id="controles">
 
             <img src="../Sprites/1.png" alt="Movimentação">
 
             <img src="../Sprites/2.png" alt="Tiro">
 
-            <img src="../Sprites/pause.png" alt="pause">
+            <img src="../Sprites/pause.png" alt="Pause">
 
         </div>
 
     </div>
 
+    <a href="index.html"><button id="btnIniciar">SAIR</button></a>
+
     <script src="../Script/scriptgame.js" type="text/javascript"></script>
 
 </body>
+
 </html>

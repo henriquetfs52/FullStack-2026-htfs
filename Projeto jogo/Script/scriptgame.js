@@ -1,3 +1,23 @@
+// Tela inicial
+
+let telaInicial = document.getElementById("telaInicial");
+let btnIniciar = document.getElementById("btnIniciar");
+
+
+// Botão iniciar
+btnIniciar.addEventListener("click", function(){
+
+    telaInicial.style.display = "none";
+
+    pausado = false;
+
+    desenha();
+
+});
+
+
+
+
 // Canvas e contexto
 
 let canvasgame = document.getElementById("game");
@@ -9,8 +29,9 @@ let ctx = canvasgame.getContext("2d");
 let atirar = false;
 let points = 0;
 let fase = 1;
-let pausado = false;
+let pausado = true;
 let emTransicao = false;
+let troca_frame_inimigo = 0;
 
 
 // Jogador
@@ -23,10 +44,19 @@ let rect = {
     vida: 3
 };
 
- // Imagem do jogador
+ // Imagem inicial do jogador
 let playerImg = new Image();
 
 playerImg.src = "../Sprites/Player_W.png";
+
+
+// Imagens dos inimigos
+
+let inimigoImg1 = new Image();
+inimigoImg1.src = "../Sprites/Inimigo_loop1.png";
+
+let inimigoImg2 = new Image();
+inimigoImg2.src = "../Sprites/Inimigo_loop2.png";
 
 // Tiro
 
@@ -191,6 +221,8 @@ document.addEventListener("keydown", function(andar){
         rect.y -= vel;
 
         playerImg.src = "../Sprites/Player_W.png";
+
+        
     }
 
     // S
@@ -199,6 +231,7 @@ document.addEventListener("keydown", function(andar){
         rect.y += vel;
 
         playerImg.src = "../Sprites/Player_S.png";
+
     }
 
     // A
@@ -231,13 +264,13 @@ function mudarFase(novaFase){
     ctx.fillStyle = "white";
     ctx.font = "40px Arial";
 
-    ctx.fillText("FASE " + novaFase, 220, 240);
+    ctx.fillText("FASE " + novaFase, 260, 240);
 
     setTimeout(function(){
 
         fase = novaFase;
 
-        criarInimigo(1.5 + (fase * 0.2));
+        criarInimigo(1.5 + (fase * 0.1));
 
         rect.x = 300;
         rect.y = 220;
@@ -299,17 +332,34 @@ function resetarInimigos(){
 
 function desenha(){
 
-    if(pausado || emTransicao){
-        return;
-    }
+    
+
+    if(emTransicao){
+    return;
+}
+
+if(pausado){
+
+    // Fundo escuro
+    ctx.fillStyle = "rgba(0,0,0,0.5)";
+    ctx.fillRect(0,0,canvasgame.width,canvasgame.height);
+
+    // Texto
+    ctx.fillStyle = "white";
+    ctx.font = "40px Arial";
+
+    ctx.fillText("PAUSADO", 220, 240);
+
+   
+
+    return;
+}
 
     requestAnimationFrame(desenha);
-
 
     // Limpa tela
 
     ctx.clearRect(0,0,canvasgame.width,canvasgame.height);
-
 
     // Verifica mudança de fase
 
@@ -459,15 +509,41 @@ function desenha(){
 
         }
 
+        // Aumenta a variavel de troca de frame do inimigo
+        troca_frame_inimigo++;
+    
+    
+    // Desenha inimigo
 
-        // Desenha inimigo
+    if(troca_frame_inimigo < 20){
 
-        ctx.fillStyle = inimigo.color;
-        ctx.fillRect(inimigo.x, inimigo.y, inimigo.w, inimigo.h);
+        ctx.drawImage(
+            inimigoImg1,
+            inimigo.x,
+            inimigo.y,
+            inimigo.w,
+            inimigo.h
+        );
+
+    }else{
+
+        ctx.drawImage(
+            inimigoImg2,
+            inimigo.x,
+            inimigo.y,
+            inimigo.w,
+            inimigo.h
+        );
 
     }
 
-     // Reseta quando visa <0
+    if(troca_frame_inimigo > 40){
+        troca_frame_inimigo = 0;
+                    }
+
+    }
+
+     // Reseta quando vida <0
     
      if(rect.vida <= 0){
 
@@ -492,22 +568,8 @@ function desenha(){
 
     ctx.fillText("Pontos: " + points, 500, 30);
     ctx.fillText("Level: " + fase, 20, 30);
-    ctx.fillText("Vidas: " + rect.vida, 200, 30);
+    ctx.fillText("Vidas: " + rect.vida, 260, 30);
 
-
-    // Tela de pause
-
-    if(pausado){
-
-        ctx.fillStyle = "rgba(0,0,0,0.5)";
-        ctx.fillRect(0,0,canvasgame.width,canvasgame.height);
-
-        ctx.fillStyle = "white";
-        ctx.font = "40px Arial";
-
-        ctx.fillText("PAUSADO", 220, 220);
-
-    }
 
 }
 
