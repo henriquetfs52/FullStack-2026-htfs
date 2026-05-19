@@ -208,8 +208,6 @@ document.addEventListener("keydown", function(tiro){
 
 // Movimento do jogador
 
-// Movimento do jogador
-
 document.addEventListener("keydown", function(andar){
 
     let tecla = andar.key;
