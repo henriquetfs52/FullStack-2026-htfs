@@ -1,44 +1,37 @@
-
-
+/* fundo principal */
 .fundo{
     position: fixed;
     width: 100%;
     height: 100vh;
-
     background-image: url("../SunsetBGlowk.jpeg");
     background-size: cover;
     background-position: center;
-
     filter: blur(5px);
-     transform: scale(1.1);
+    transform: scale(1.1);
     z-index: -1;
-
-
 }
 
+/* fundo da tela de perfil */
 #profile.fundo{
     position: fixed;
     width: 100%;
     height: 100vh;
-
     background-image: url("../SunsetBGlowk.jpeg");
     background-size: cover;
     background-position: center;
-
     filter: blur(8px);
-     transform: scale(1.1);
+    transform: scale(1.1);
     z-index: -1;
-
-
 }
 
-
+/* area principal do conteúdo */
 #conteudo{
     display: flex;
     justify-content: center;
     height: 500px;
 }
 
+/* imagens dentro do conteúdo */
 #conteudo img{
     border-style: solid;
     border-color: #c01919;
@@ -47,34 +40,34 @@
     margin-left: 5px;
 }
 
+/* caixa de informações */
 #infos{
     display: flex;
     flex-direction: column;
     gap: 0;
-    color:darkred;
+    color: darkred;
     align-items: center;
     justify-content: center;
     text-shadow: 0 0 15px rgb(255, 0, 0);
     font-size: larger;
 }
 
+/* textos do infos */
 #infos p{
     margin: 2px;
 }
 
+/* titulos do infos */
 #infos h2{
     margin: 6px;
 }
-
 
 #infos h3{
     margin: 6px;
 }
 
-
-
-
-#titulo {
+/* area do titulo */
+#titulo{
     background-color: rgb(235, 177, 90);
     border-style: solid;
     border-width: 2px;
@@ -84,88 +77,89 @@
     height: 150px;
     width: 90%;
     position: relative;
-    
-}
-#titulo img{
-    order:2
-}
-#titulo canvas{
-     position: absolute;
-     order: 1;
 }
 
+/* imagem do título */
+#titulo img{
+    order: 2;
+}
+
+/* canvas do título */
+#titulo canvas{
+    position: absolute;
+    order: 1;
+}
+
+/* bloco principal */
 #main{
     display: flex;
     align-items: center;
     justify-self: center;
     flex-flow: column;
     width: 90%;
-    background-color: rgb(255, 255, 255,0.7);
+    background-color: rgb(255, 255, 255, 0.7);
     margin-top: 10px;
     border-style: solid;
     border-width: 2px;
     padding-bottom: 50px;
 }
 
+/* paragrafos principais */
 #main p{
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    text-align:center;
+    text-align: center;
     text-shadow: 0px 1px 0px #c01919;
     padding-left: 70px;
     padding-right: 70px;
     font-weight: bold;
 }
 
+/* titulo principal */
 #main h1{
     font-family: 'Courier New', Courier, monospace;
     font-size: 40px;
-    text-align:center;
-
+    text-align: center;
     color: rgb(212, 31, 55);
-    
 }
 
+/* area das opções */
 #options{
     width: 65%;
     display: flex;
     justify-content: space-between;
     justify-self: center;
     flex-flow: row;
-    
-    
 }
 
-
-#btnIniciar{
+/* botão */
+#btn{
     font-family: 'Courier New', Courier, monospace;
     width: 250px;
     height: 70px;
     border-style: solid;
     border-color: darkred;
     border-radius: 10px;
-
     font-size: 30px;
-
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
-
-#btnIniciar:hover{
+/* efeito hover do botão */
+#btn:hover{
     color: #c01919;
     font-weight: bold;
     transform: scale(1.05);
 }
 
+/* imagem praire king */
 #img_pk{
     transition: 0.2s;
     border-color: #c01919;
     border-style: solid;
 }
 
-#img_pk:hover {
+/* efeito hover da imagem */
+#img_pk:hover{
     transform: scale(1.05);
 }
